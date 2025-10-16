@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Navbar Layout ===== */
+.navbar {
+  background: #222;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  background: #222;
+}
+
+.menu>li {
+  position: relative;
+}
+
+.menu a,
+.dropdown-btn {
+  text-decoration: none;
+  display: block;
+  color: white;
+  background: none;
+  border: none;
+  padding: 14px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.menu a:hover,
+.dropdown-btn:hover {
+  background: #444;
+}
+
+/* ===== Dropdown Styling ===== */
+.dropdown {
+  display: none;
+  position: absolute;
+  background: #333;
+  list-style: none;
+  min-width: 180px;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+}
+
+.dropdown li {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background: #555;
+}
+
+/* ===== Sub-dropdown Styling ===== */
+.sub-dropdown {
+  left: 100%;
+  top: 0;
+  margin-top: 80px;
+}
+
+/* ===== Hover Functionality (Desktop) ===== */
+@media (min-width: 769px) {
+  .menu-item:hover>.dropdown {
+    display: block;
+  }
+}
+
+/* ===== Responsive Layout (Mobile) ===== */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+
+  .dropdown {
+    position: static;
+    display: none;
+  }
+
+  .menu-item.open>.dropdown {
+    display: block;
+  }
+
+  .sub-dropdown {
+    margin-top: 0px;
+  }
+}
